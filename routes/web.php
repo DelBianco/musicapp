@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $artists = \App\Artist::all();
+
+    return view('welcome', ['artists' => $artists]);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
