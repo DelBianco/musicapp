@@ -24,11 +24,18 @@
             <div class="content">
                 <div class="title m-b-md">
                     Artistas
+                    <hr>
                 </div>
                 <div class="links">
                     @foreach ($artists as $artist)
-                        {{ $artist->name }}<br>
-                        
+                        <small>Artista:</small> {{ $artist->name }}<br>
+                        <small>Musicas:</small>
+                        <ul>
+                            @foreach ($artist->musics as $music)
+                                <li>{{ $music->titulo }}</li>
+                            @endforeach
+                        </ul>
+                        <hr>
                     @endforeach
                 </div>
             </div>
