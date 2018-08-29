@@ -5,9 +5,9 @@ Veja o app rodando em musicapp.tk
 Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
 
 ### Tarefas:
-- [ ] Criar Entidades
+- [X] Criar Entidades
     - [X] Artistas
-    - [ ] Musicas
+    - [X] Musicas
     - [X] Usuarios (Automático via Artisan)
 - [ ] Gerar "CRUD"
     - [ ] Fazer CRUD (Create, Read, Update, Destroy ) das entidades (criar arquivos e rotas)
