@@ -6,9 +6,9 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
 
 ### Tarefas:
 - [ ] Criar Entidades
-    - [ x ] Artistas
+    - [X] Artistas
     - [ ] Musicas
-    - [ x ] Usuarios (Automático via Artisan)
+    - [X] Usuarios (Automático via Artisan)
 - [ ] Gerar "CRUD"
     - [ ] Fazer CRUD (Create, Read, Update, Destroy ) das entidades (criar arquivos e rotas)
         - [ ] CRUD Artistas
