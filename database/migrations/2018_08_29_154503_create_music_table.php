@@ -15,9 +15,10 @@ class CreateMusicTable extends Migration
     {
         Schema::create('musics', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titulo');
-            $table->integer('artist_id')->unsigned();
-            $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');
+            $table->string('name');
+            $table->string('composer');
+            $table->integer('order_number');
+            $table->integer('duration'); // duracao em segundos !!!!
             $table->timestamps();
         });
     }
