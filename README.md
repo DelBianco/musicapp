@@ -10,12 +10,13 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
     - [X] Albuns
     - [X] Musicas
     - [X] Usuarios (Automático via Artisan) 
-    - [ ] Revisar atributos das entidades de acordo com o DOC
+    - [X] Revisar atributos das entidades de acordo com o DOC
         - [X] Artistas/Bandas   
-        - [ ] Criar o relacionamento "Many to Many" para Album e Songs (um album tem muitas musicas, mas uma musica pode estar em mais de um album (Coletâneas por exemplo))
-        - [ ] Musicas (Songs)
-        - [ ] Albums
+        - [X] Criar o relacionamento "Many to Many" para Album e Songs (um album tem muitas musicas, mas uma musica pode estar em mais de um album (Coletâneas por exemplo))
+        - [X] Musicas (Songs)
+        - [X] Albums
         - [X] Users
+    - [ ] Alimentar com Faker e Seeder as entidades
 - [ ] Gerar "CRUD"
     - [ ] Fazer CRUD (Create, Read, Update, Destroy ) das entidades (criar arquivos e rotas)
         - [ ] CRUD Artistas

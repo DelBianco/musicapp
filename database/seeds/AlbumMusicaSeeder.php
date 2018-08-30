@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
-class ArtistTableSeeder extends Seeder
+class AlbumMusicaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,13 +12,11 @@ class ArtistTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Artist::class, 3)->create();
-
-        $albums = \App\Album::all();
+        $musicas = \App\Music::all();
 
         // Adiciona um grupo para cada pessoa
-        foreach ($albums as $album) {
-            DB::table('albums')->insert([
+        foreach ($musicas as $musica) {
+            DB::table('album_musica')->insert([
                 'album_id'	=> rand(1,5),
                 'musica_id'	=> $musica->id,
             ]);
