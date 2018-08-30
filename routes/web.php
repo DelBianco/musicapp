@@ -13,8 +13,31 @@
 
 Route::get('/', function () {
     $artists = \App\Artist::all();
-
     return view('welcome', ['artists' => $artists]);
+});
+
+Route::get('/music/new', function () {
+    return view('music/new');
+});
+
+Route::get('/music/edit', function () {
+    return view('music/edit');
+});
+
+Route::get('/music/show', function () {
+    return view('music/show');
+});
+
+Route::get('/artist/new', function () {
+    return view('music/new');
+});
+
+Route::get('/artist/edit', function () {
+    return view('music/edit');
+});
+
+Route::get('/artist/show', function () {
+    return view('music/show');
 });
 
 Auth::routes();
