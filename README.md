@@ -10,6 +10,7 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
     - [ ] Albuns
     - [X] Musicas
     - [X] Usuarios (Automático via Artisan)
+- [ ] Criar o relacionamento "Many to Many" para Album e Songs (um album tem muitas musicas, mas uma musica pode estar em mais de um album (Coletâneas por exemplo)) 
 - [ ] Revisar atributos das entidades de acordo com o DOC
     - [ ] Artistas/Bandas   
     - [ ] Musicas (Songs)
