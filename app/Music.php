@@ -6,11 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Music extends Model
 {
-    /**
-     * Get the post that owns the comment.
-     */
-    public function artist()
-    {
-        return $this->belongsTo('App\Artist');
+
+    public function musics(){
+        return $this->belongsToMany('App\Album', 'album_musica');
     }
 }
