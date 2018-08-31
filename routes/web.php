@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    $artists = \App\Artist::all();
-    return view('welcome', ['artists' => $artists]);
+    $albums = \App\Album::all();
+    return view('welcome', ['albums' => $albums]);
 });
 
 Route::get('/music/new', function () {
