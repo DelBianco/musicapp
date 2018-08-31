@@ -3,7 +3,9 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Album::class, function (Faker $faker) {
+
     return [
-        'artist_id' => factory(\App\Artist::class)->create()->id
+        'cover_foto' => $faker->image(),
+        'year' => rand(1920,2018)
     ];
 });

@@ -13,12 +13,14 @@ class AlbumMusicaSeeder extends Seeder
     public function run()
     {
         $musicas = \App\Music::all();
+        $albums = \App\Album::all();
+
 
         // Adiciona um grupo para cada pessoa
         foreach ($musicas as $musica) {
             DB::table('album_musica')->insert([
-                'album_id'	=> rand(1,5),
-                'musica_id'	=> $musica->id,
+                'album_id'	=> rand(1,count($albums)),
+                'musica_id'	=> $musica->id
             ]);
         }
     }

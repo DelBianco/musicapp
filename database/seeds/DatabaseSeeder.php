@@ -11,6 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        $this->call([
+            ArtistTableSeeder::class,
+            MusicTableSeeder::class,
+            AlbumTableSeeder::class,
+            AlbumMusicaSeeder::class,
+        ]);
     }
 }

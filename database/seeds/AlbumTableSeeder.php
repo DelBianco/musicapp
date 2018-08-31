@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class AlbumTableSeeder extends Seeder
 {
@@ -11,7 +12,14 @@ class AlbumTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Pessoa::class, 5)->create();
-
+        $artists = \App\Artist::all();
+        // Adiciona um grupo para cada pessoa
+        foreach ($artists as $artist) {
+            DB::table('albums')->insert([
+                'artist_id'	=> $artist->id,
+                'cover_foto' => 'https://loremflickr.com/g/320/240/abstract',
+                'year' => rand(1920,2018)
+            ]);
+        }
     }
 }
