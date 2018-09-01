@@ -17,7 +17,7 @@ class CreateAlbumTable extends Migration
             $table->increments('id');
             $table->integer('artist_id')->unsigned();
             $table->foreign('artist_id')->references('id')->on('artists')->onDelete('cascade');
-            $table->string('cover_foto');
+            $table->longText('cover_foto');
             $table->integer('year');
             $table->timestamps();
         });

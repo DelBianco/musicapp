@@ -1,13 +1,15 @@
 <?php
 
 use Faker\Generator as Faker;
+use RedeyeVentures\GeoPattern\GeoPattern;
 
 $factory->define(App\Artist::class, function (Faker $faker) {
     $name = $faker->name;
-    $img = str_replace(array('.',' ','Mr','Ms'),'',$name);
+    $geopattern = new GeoPattern();
+    $geopattern->setString($name);
     return [
         'name' => $name,
-        'image' => 'https://loremflickr.com/g/320/240/'.strtolower($img),
+        'image' => $geopattern->toDataURI(),
         'genre' => $faker->randomElement(['rock', 'pop', 'country', 'blues', 'mpb', 'samba']),
         'description' => $faker->paragraph
     ];

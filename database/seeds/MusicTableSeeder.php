@@ -11,6 +11,6 @@ class MusicTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Music::class, 50)->create();
+        factory(App\Music::class, 800)->create();
     }
 }

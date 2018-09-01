@@ -15,10 +15,13 @@ class CreateAlbumMusicaTable extends Migration
     {
         Schema::create('album_musica', function (Blueprint $table) {
             $table->increments('id');
+
             $table->integer('album_id')->unsigned();
-            $table->integer('musica_id')->unsigned();
             $table->foreign('album_id')->references('id')->on('albums');
+
+            $table->integer('musica_id')->unsigned();
             $table->foreign('musica_id')->references('id')->on('musics');
+            
             $table->timestamps();
         });
     }
