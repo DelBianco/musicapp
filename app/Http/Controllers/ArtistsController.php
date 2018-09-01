@@ -21,7 +21,10 @@ class ArtistsController extends Controller
     public function store(ArtistRequest $request)
     {
         $artist = new Artist();
-        // TODO: setar os atributos aqui!
+        $artist->name = $request->name;
+        $artist->genre = $request->genre;
+        $artist->description = $request->description;
+        $artist->image = $request->image;
         $artist->save();
         return redirect()->route('artist.index')->with('message', 'Artist created successfully!');
     }
@@ -40,7 +43,10 @@ class ArtistsController extends Controller
     public function update(ArtistRequest $request, $id)
     {
         $artist = Artist::findOrFail($id);
-        // TODO: Setar os atributos aqui!
+        $artist->name = $request->name;
+        $artist->genre = $request->genre;
+        $artist->description = $request->description;
+        $artist->image = $request->image;
         $artist->save();
         return redirect()->route('artist.index')->with('message', 'Artist updated successfully!');
     }

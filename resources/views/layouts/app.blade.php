@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel mb-5">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     MusicApp
@@ -70,7 +70,6 @@
                 </div>
             </div>
         </nav>
-
         <main>
             @yield('content')
         </main>
