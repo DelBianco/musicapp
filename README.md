@@ -4,7 +4,7 @@ Veja o app rodando em musicapp.tk
 
 Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
 
-### Tarefas:
+## Tarefas:
 - [X] Criar Entidades
     - [X] Artistas
     - [X] Albuns
@@ -19,13 +19,25 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
     - [X] Alimentar com Faker e Seeder as entidades
 - [ ] Gerar "CRUD"
     - [ ] Fazer CRUD (Create, Read, Update, Destroy ) das entidades (criar arquivos e rotas)
-        - [ ] CRUD Artistas
+        - [X] CRUD Artistas
         - [ ] CRUD Albums
         - [ ] CRUD Musicas
         - [ ] CRUD User
-    - [ ] Verificar acesso ("Edit" e "New" só para quem tem Admin)
-    - [ ] Verificar acesso Publico dessas informacoes
+- [ ] Criar politicas de Acesso 'Rules' (Public, User, Admin)
 - [ ] Layout
     - [X] Criar uma Home-Page
-    - [ ] Global Search
-    - [ ] Verificar layout do CRUD/Admin
+    - [ ] Criar páginas em nível Público
+        - [ ] List Artists
+        - [ ] List Albums
+        - [ ] List Songs
+        - [ ] View Artist
+        - [ ] View Album
+        - [ ] Global Search
+    - [ ] Criar páginas em nível User
+        - [ ] Create/Edit Artist
+        - [ ] Create/Edit Album
+        - [ ] Create/Edit Songs
+        - [ ] Remove Artist/Album/Songs
+    - [ ] Criar páginas em nível Admin
+        - [ ] Create/Edit User
+        - [ ] Remove User
