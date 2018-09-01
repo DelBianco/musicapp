@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Music extends Model
 {
-
-    public function musics(){
-        return $this->belongsToMany('App\Album', 'album_musica');
+    public function albums(){
+        return $this->belongsToMany('App\Album', 'album_musica','album_id');
     }
 }

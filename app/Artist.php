@@ -13,4 +13,17 @@ class Artist extends Model
     {
         return $this->hasMany('App\Album', 'artist_id');
     }
+
+    /**
+     * Retorna a duração do album.
+     */
+    public function getAmountOfTime() {
+        $albums = $this->albums()->getResults();
+        $time = 0;
+        foreach ($albums as $album) {
+            $time += $album->getDuration();
+        }
+        return $time;
+    }
+
 }
