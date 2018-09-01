@@ -16,30 +16,7 @@ Route::get('/', function () {
     return view('welcome', ['artists' => $artists]);
 });
 
-Route::get('/music/new', function () {
-    return view('music/new');
-});
-
-Route::get('/music/edit', function () {
-    return view('music/edit');
-});
-
-Route::get('/music/show', function () {
-    return view('music/show');
-});
-
-Route::get('/artist/new', function () {
-    return view('music/new');
-});
-
-Route::get('/artist/edit', function () {
-    return view('music/edit');
-});
-
-Route::get('/artist/show', function () {
-    return view('music/show');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/artists', 'ArtistsController')->middleware('auth');
