@@ -10,7 +10,7 @@
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top"
                                  src="{{ $artist->image }}"
-                                 alt="{{ $artist->name }}" style="height: 200px">
+                                 alt="{{ $artist->name }}" >
                             <div class="card-body">
                                 <h3>{{ $artist->name }}</h3>
                                 <p class="card-text">

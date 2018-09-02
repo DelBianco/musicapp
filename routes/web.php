@@ -24,7 +24,11 @@ Route::resource('/album', 'AlbumController')->middleware('auth');
 Route::resource('/music', 'MusicController')->middleware('auth');
 
 
-Route::get('/login/spotify', 'SpotifyController@spotifyLogin')->name('login');
+Route::get('/login/spotify', 'SpotifyController@spotifyLogin');
 Route::get('/callback', 'SpotifyController@spotifyCallback');
 Route::get('/denied', 'SpotifyController@denied');
 Route::get('/login/refresh', 'SpotifyController@spotifyRefresh');
+
+
+
+Route::get('/fetch', 'SpotifyController@retrieveData');
