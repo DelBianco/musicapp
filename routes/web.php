@@ -19,4 +19,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/artists', 'ArtistsController')->middleware('auth');
+Route::resource('/artist', 'ArtistsController')->middleware('auth');
+Route::resource('/album', 'AlbumController')->middleware('auth');
+Route::resource('/music', 'MusicController')->middleware('auth');

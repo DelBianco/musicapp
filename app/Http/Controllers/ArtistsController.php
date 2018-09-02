@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Artist;
 use App\Http\Requests\ArtistRequest;
+use Intervention\Image\Facades\Image;
 
 class ArtistsController extends Controller
 {
+
     public function index()
     {
         $artists = Artist::orderBy('created_at', 'desc')->paginate(10);
@@ -24,7 +26,7 @@ class ArtistsController extends Controller
         $artist->name = $request->name;
         $artist->genre = $request->genre;
         $artist->description = $request->description;
-        $artist->image = $request->image;
+        $artist->image = (string) Image::make($request->image)->encode('data-url');
         $artist->save();
         return redirect()->route('artist.index')->with('message', 'Artist created successfully!');
     }

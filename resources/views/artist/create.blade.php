@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <form action="/submit" method="post">
+                <form action="{{ route('artist.store') }}" method="post" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <label for="title">Name</label>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
                         <label for="image">Image</label>
-                        <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}"  value="{{ old('image') }}"  name="image" required>
+                        <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}"  value="{{ old('image') }}"  name="image" accept="image/png, image/jpeg">
                         @if ($errors->has('image'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('image') }}</strong>
