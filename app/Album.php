@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class Album extends Model
 {
-
+    use Searchable;
     /**
      * Retorna  o artista dono do album.
      */

@@ -33,6 +33,7 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
         - [X] View Artist
         - [X] View Album
         - [X] View Music
+    - [ ] Editar Sass e utilizar o mix
 - [ ] Global Search
     - [ ] Criar páginas em nível User
         - [X] Create/Edit Artist
