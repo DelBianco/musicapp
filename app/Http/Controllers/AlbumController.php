@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Album;
+use App\Artist;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -15,8 +16,8 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $album = Album::orderBy('created_at', 'desc')->paginate(10);
-        return view('album.index',['album' => $album]);
+        $albums = Album::all();
+        return view('album.index',['albums' => $albums]);
     }
 
     /**
@@ -26,7 +27,8 @@ class AlbumController extends Controller
      */
     public function create()
     {
-        return view('album.create');
+        $artists = Artist::all();
+        return view('album.create',compact('artists'));
     }
 
     /**
@@ -38,7 +40,10 @@ class AlbumController extends Controller
     public function store(Request $request)
     {
         $album = new Album();
-        // TODO: Set data
+        $album->year = $request->year;
+        $album->cover_foto =  (string) Image::make($request->cover_foto)->encode('data-url');
+        // Adicionando o relacionamento Album Artist
+        $album->artist_id = $request->artist;
         $album->save();
         return redirect()->route('album.index')->with('message', 'Album created successfully!');
     }
@@ -51,7 +56,7 @@ class AlbumController extends Controller
      */
     public function show(Album $album)
     {
-        //
+        return view('album.show',compact('album'));
     }
 
     /**
@@ -62,7 +67,8 @@ class AlbumController extends Controller
      */
     public function edit(Album $album)
     {
-        return view('album.edit',compact('album'));
+        $artists = Artist::all();
+        return view('album.create',compact('album','artists'));
     }
 
     /**
@@ -75,7 +81,10 @@ class AlbumController extends Controller
     public function update(Request $request, Album $album)
     {
 
-        // TODO set Data
+        $album->year = $request->year;
+        $album->cover_foto =  (string) Image::make($request->cover_foto)->encode('data-url');
+        // Adicionando o relacionamento Album Artist
+        $album->artist_id = $request->artist;
         $album->save();
         return redirect()->route('album.index')->with('message', 'Album updated successfully!');
     }

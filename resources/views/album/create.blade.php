@@ -16,9 +16,14 @@
                             <span class="help-block">{{ $errors->first('year') }}</span>
                         @endif
                     </div>
+
                     <div class="form-group{{ $errors->has('artist') ? ' has-error' : '' }}">
-                        <label for="description">Artist [Change to Select]</label>
-                        <input type="text" class="form-control" id="artist" name="artist" placeholder="Artist" value="{{ old('artist') }}">
+                        <label for="description">Artist</label>
+                        <select id="artist" class="form-control" name="artist">
+                            @foreach($artists as $artist)
+                                <option value="{{$artist->id}}">{{$artist->name}}</option>
+                            @endforeach
+                        </select>
                         @if($errors->has('artist'))
                             <span class="help-block">{{ $errors->first('artist') }}</span>
                         @endif

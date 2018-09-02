@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class Album extends Model
 {
-    protected $attributes = ['duration' => 0];
 
     /**
      * Retorna  o artista dono do album.

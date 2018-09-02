@@ -15,7 +15,7 @@ class MusicController extends Controller
     public function index()
     {
         $musics = Music::orderBy('created_at', 'desc')->paginate(10);
-        return view('music.index',['music' => $musics]);
+        return view('music.index',['musics' => $musics]);
     }
 
     /**
@@ -36,9 +36,12 @@ class MusicController extends Controller
      */
     public function store(Request $request)
     {
-        $artist = new Music();
-        // TODO: fill data
-        $artist->save();
+        $music = new Music();
+        $music->name = $request->name;
+        $music->composer = $request->composer;
+        $music->order_number = $request->order_number;
+        $music->duration = $request->duration;
+        $music->save();
         return redirect()->route('music.index')->with('message', 'Music created successfully!');
     }
 
@@ -50,7 +53,7 @@ class MusicController extends Controller
      */
     public function show(Music $music)
     {
-        //
+        return view('music.show',compact('music'));
     }
 
     /**
@@ -61,7 +64,7 @@ class MusicController extends Controller
      */
     public function edit(Music $music)
     {
-        return view('music.edit',compact('music'));
+        return view('music.create',compact('music'));
     }
 
     /**
@@ -73,7 +76,10 @@ class MusicController extends Controller
      */
     public function update(Request $request, Music $music)
     {
-        // TODO: set data from request
+        $music->name = $request->name;
+        $music->composer = $request->composer;
+        $music->order_number = $request->order_number;
+        $music->duration = $request->duration;
         $music->save();
         return redirect()->route('music.index')->with('message', 'Music updated successfully!');
     }

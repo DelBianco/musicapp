@@ -12,7 +12,7 @@ class ArtistsController extends Controller
     public function index()
     {
         $artists = Artist::orderBy('created_at', 'desc')->paginate(10);
-        return view('artist.index',['artist' => $artists]);
+        return view('artist.index',['artists' => $artists]);
     }
 
     public function create()
@@ -31,20 +31,18 @@ class ArtistsController extends Controller
         return redirect()->route('artist.index')->with('message', 'Artist created successfully!');
     }
 
-    public function show($id)
+    public function show(Artist $artist)
     {
-        //
+        return view('artist.show',compact('artist'));
     }
 
-    public function edit($id)
+    public function edit(Artist $artist)
     {
-        $artist = Artist::findOrFail($id);
-        return view('artist.edit',compact('artist'));
+        return view('artist.create',compact('artist'));
     }
 
-    public function update(ArtistRequest $request, $id)
+    public function update(ArtistRequest $request, Artist $artist)
     {
-        $artist = Artist::findOrFail($id);
         $artist->name = $request->name;
         $artist->genre = $request->genre;
         $artist->description = $request->description;
@@ -53,9 +51,8 @@ class ArtistsController extends Controller
         return redirect()->route('artist.index')->with('message', 'Artist updated successfully!');
     }
 
-    public function destroy($id)
+    public function destroy(Artist $artist)
     {
-        $artist = Artist::findOrFail($id);
         $artist->delete();
         return redirect()->route('artist.index')->with('alert-success','Artist has been deleted!');
     }
