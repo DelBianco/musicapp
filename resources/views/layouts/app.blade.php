@@ -96,28 +96,29 @@
                     </ul>
                     @guest
                         @else
-                    Create New
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('artist.create') }}">Artists</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('album.create') }}">Albums</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('music.create') }}">Songs</a>
-                        </li>
-                    </ul>
-                    Spotify
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('fetch') }}">Autenticate</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="{{ route('fetch') }}">Load From Spotify</a>
-                        </li>
-                    </ul>
-                            @endguest
+                            Create New
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{ route('artist.create') }}">Artists</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('album.create') }}">Albums</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('music.create') }}">Songs</a>
+                                </li>
+                            </ul>
+                            Spotify
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('fetch') }}">Autenticate</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="{{ route('fetch') }}">Load From Spotify</a>
+                                </li>
+                            </ul>
+
+                    @endguest
                 </div>
                 <div class="col-md-10">
                     @yield('content')

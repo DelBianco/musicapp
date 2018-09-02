@@ -52,33 +52,36 @@ class SpotifyController extends Controller
         }
         $top = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=5");
         foreach ($top->items as $item) {
-            $artist = new Artist();
-            $artist->name = $item->name;
-            $artist->genre = $item->genres[0];
-            $artist->description = 'Generos: '.implode(',',$item->genres);
-            $artist->image = $item->images[0]->url;
-            $artist->save();
+            $artist = Artist::where('name', $item->name)->first();
+            if($artist == null){
+                $artist = new Artist();
+                $artist->name = $item->name;
+                $artist->genre = $item->genres[0];
+                $artist->description = 'Generos: '.implode(',',$item->genres);
+                $artist->image = $item->images[0]->url;
+                $artist->save();
+                $albums = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/artists/".$item->id."/albums?market=ES&limit=10");
+                foreach ($albums->items as $albumItem){
+                    $album = new Album();
+                    $album->year = explode('-',$albumItem->release_date)[0];
+                    $album->cover_foto =  $albumItem->images[0]->url;
+                    // Adicionando o relacionamento Album Artist
+                    $album->artist_id = $artist->id;
 
-            $albums = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/artists/".$item->id."/albums?market=ES&limit=10");
-            foreach ($albums->items as $albumItem){
-                $album = new Album();
-                $album->year = explode('-',$albumItem->release_date)[0];
-                $album->cover_foto =  $albumItem->images[0]->url;
-                // Adicionando o relacionamento Album Artist
-                $album->artist_id = $artist->id;
-
-                $tracks = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/albums/".$albumItem->id."/tracks");
-                foreach ($tracks->items as $track) {
-                    $music = new Music();
-                    $music->name = $track->name;
-                    $music->composer = $artist->name;
-                    $music->order_number = $track->track_number;
-                    $music->duration = intval($track->duration_ms/1000);
-                    $music->albums()->attach($album->id);
-                    $music->save();
+                    $tracks = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/albums/".$albumItem->id."/tracks");
+                    foreach ($tracks->items as $track) {
+                        $music = new Music();
+                        $music->name = $track->name;
+                        $music->composer = $artist->name;
+                        $music->order_number = $track->track_number;
+                        $music->duration = intval($track->duration_ms/1000);
+                        $music->albums()->attach($album->id);
+                        $music->save();
+                    }
+                    $album->save();
                 }
-                $album->save();
             }
+
         }
         return redirect('/music');
     }
@@ -122,12 +125,5 @@ class SpotifyController extends Controller
             return json_decode($response->getBody());
         }
     }
-    public function viewStats()
-    {
-        if (session()->has('spotify_token')) {
-            return view('spotify.index');
-        }
 
-        return redirect('/login/spotify');
-    }
 }

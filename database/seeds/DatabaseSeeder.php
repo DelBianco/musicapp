@@ -12,10 +12,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            ArtistTableSeeder::class,
-            MusicTableSeeder::class,
-            AlbumTableSeeder::class,
-            AlbumMusicaSeeder::class,
+            UserTableSeeder::class,
+            /*
+             * Para alimentar a base de dados com os dados do Spotify faça o login e utilize o fetch do spotify
+             * Caso nao queira descomente as chamadas abaixo e crie com dados do Faker
+             *
+             * MusicTableSeeder::class,
+             * AlbumTableSeeder::class,
+             * AlbumMusicaSeeder::class,
+             * */
         ]);
     }
 }

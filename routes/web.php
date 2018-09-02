@@ -18,7 +18,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/user/{user}/edit', 'Auth\RegisterController@edit')->middleware('auth')->name('user.edit');
+Route::delete('/user/{user}', 'Auth\RegisterController@delete')->middleware('auth')->name('user.delete');
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('/artist', 'ArtistsController')->middleware('auth')->except(['index','show']);
 Route::resource('/album', 'AlbumController')->middleware('auth')->except(['index','show']);
 Route::resource('/music', 'MusicController')->middleware('auth')->except(['index','show']);
