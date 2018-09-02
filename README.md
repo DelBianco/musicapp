@@ -27,16 +27,16 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
 - [ ] Layout
     - [X] Criar uma Home-Page
     - [ ] Criar páginas em nível Público
-        - [ ] List Artists
-        - [ ] List Albums
-        - [ ] List Songs
+        - [X] List Artists
+        - [X] List Albums
+        - [X] List Songs
         - [ ] View Artist
         - [ ] View Album
         - [ ] Global Search
     - [ ] Criar páginas em nível User
         - [X] Create/Edit Artist
-        - [ ] Create/Edit Album
-        - [ ] Create/Edit Songs
+        - [X] Create/Edit Album
+        - [X] Create/Edit Songs
         - [ ] Remove Artist/Album/Songs
     - [ ] Criar páginas em nível Admin
         - [ ] Create/Edit User

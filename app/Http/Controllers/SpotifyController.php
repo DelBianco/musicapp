@@ -47,7 +47,9 @@ class SpotifyController extends Controller
 
     public function retrieveData(\GuzzleHttp\Client $httpClient, Request $request)
     {
-
+        if (!session()->has('spotify_token')) {
+            return redirect('/login/spotify');
+        }
         $top = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=5");
         foreach ($top->items as $item) {
             $artist = new Artist();

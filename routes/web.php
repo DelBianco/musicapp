@@ -19,16 +19,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/artist', 'ArtistsController')->middleware('auth');
-Route::resource('/album', 'AlbumController')->middleware('auth');
-Route::resource('/music', 'MusicController')->middleware('auth');
+Route::resource('/artist', 'ArtistsController')->middleware('auth')->except('index');
+Route::resource('/album', 'AlbumController')->middleware('auth')->except('index');
+Route::resource('/music', 'MusicController')->middleware('auth')->except('index');
 
+Route::get('/artist', 'ArtistsController@index')->name('artist.index');
+Route::get('/album', 'AlbumController@index')->name('album.index');
+Route::get('/music', 'MusicController@index')->name('music.index');
 
 Route::get('/login/spotify', 'SpotifyController@spotifyLogin');
 Route::get('/callback', 'SpotifyController@spotifyCallback');
 Route::get('/denied', 'SpotifyController@denied');
 Route::get('/login/refresh', 'SpotifyController@spotifyRefresh');
-
-
-
-Route::get('/fetch', 'SpotifyController@retrieveData');
+Route::get('/fetch', 'SpotifyController@retrieveData')->name('fetch');

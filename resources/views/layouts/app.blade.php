@@ -21,35 +21,41 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel mb-5">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    MusicApp
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<div id="app">
+    <nav class="navbar navbar-expand-md navbar-light navbar-laravel mb-5">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                MusicApp
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
                         @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
+                            </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -60,19 +66,65 @@
                                         {{ __('Logout') }}
                                     </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                            @endguest
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col">
+                    List
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('artist.index') }}">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('album.index') }}">Albums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('music.index') }}">Songs</a>
+                        </li>
                     </ul>
+                    @guest
+                        @else
+                    Create New
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('artist.create') }}">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('album.create') }}">Albums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('music.create') }}">Songs</a>
+                        </li>
+                    </ul>
+                    Spotify
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('fetch') }}">Autenticate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="{{ route('fetch') }}">Load From Spotify</a>
+                        </li>
+                    </ul>
+                            @endguest
+                </div>
+                <div class="col-md-10">
+                    @yield('content')
                 </div>
             </div>
-        </nav>
-        <main>
-            @yield('content')
-        </main>
-    </div>
+        </div>
+    </main>
+</div>
 </body>
 </html>
