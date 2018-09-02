@@ -4,25 +4,12 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <h2>Albums</h2>
-            <div class="row">
+            <div class="card-columns">
                 @foreach ($albums as $album)
-                    <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                 src="{{ $album->cover_foto }}"
-                                 alt="Cover" style="height: 200px">
-                            <div class="card-body">
-                                <p class="card-text">
-                                    Artista: {{ $album->artist->name }}<br>
-                                    <small> {{ $album->year }}</small>
-                                </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="card border-dark" >
+                        <img class="card-img" src="{{ $album->cover_foto }}" alt="Card image">
+                        <div class="card-img-overlay mt-auto mb-0" style="background-color: rgba(0,0,0,0.9); height: 60px;">
+                            <h5 class="card-title text-light">{{  $album->year }} <small class="text-muted">{{ $album->artist->name }}</small></h5>
                         </div>
                     </div>
                 @endforeach

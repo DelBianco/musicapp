@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Spotify Sync!</strong> Can we sync our database with your top 10 Artists from Spotify? <a href="{{ route('fetch') }}" class="alert-link">Click Here</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     <div class="card">
         <div class="card-header">{{Auth::user()->name}}</div>
         <div class="card-body">

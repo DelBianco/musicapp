@@ -17,28 +17,28 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
         - [X] Albums
         - [X] Users
     - [X] Alimentar com Faker e Seeder as entidades
-- [ ] Gerar "CRUD"
+- [X] Gerar "CRUD"
     - [X] Fazer CRUD (Create, Read, Update, Destroy ) das entidades (criar arquivos e rotas)
         - [X] CRUD Artistas
         - [X] CRUD Albums
         - [X] CRUD Musicas
-    - [ ] Editar CRUD User
-- [ ] Criar politicas de Acesso 'Rules' (Public, User, Admin)
+    - [ ] Editar CRUD User (testar)
+- [X] Criar politicas de Acesso 'Rules' (Public, User, Admin)
 - [ ] Layout
     - [X] Criar uma Home-Page
-    - [ ] Criar páginas em nível Público
+    - [X] Criar páginas em nível Público
         - [X] List Artists
         - [X] List Albums
         - [X] List Songs
-        - [ ] View Artist
-        - [ ] View Album
-        - [ ] View Music
-        - [ ] Global Search
+        - [X] View Artist
+        - [X] View Album
+        - [X] View Music
+- [ ] Global Search
     - [ ] Criar páginas em nível User
         - [X] Create/Edit Artist
         - [X] Create/Edit Album
         - [X] Create/Edit Songs
         - [ ] Remove Artist/Album/Songs
-    - [ ] Criar páginas em nível Admin
-        - [ ] Create/Edit User
-        - [ ] Remove User
+    - [X] Criar páginas em nível Admin
+        - [X] Create/Edit User
+        - [X] Remove User

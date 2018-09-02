@@ -81,7 +81,11 @@
 
         <div class="container">
             <div class="row justify-content-center">
+                <div class="col-md-10">
+                    @yield('content')
+                </div>
                 <div class="col">
+                    @yield('sidemenu-top')
                     List
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -111,17 +115,10 @@
                             Spotify
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('fetch') }}">Autenticate</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="{{ route('fetch') }}">Load From Spotify</a>
+                                    <a class="nav-link" href="{{ route('fetch') }}">Sync with Spotify</a>
                                 </li>
                             </ul>
-
-                    @endguest
-                </div>
-                <div class="col-md-10">
-                    @yield('content')
+                            @endguest
                 </div>
             </div>
         </div>

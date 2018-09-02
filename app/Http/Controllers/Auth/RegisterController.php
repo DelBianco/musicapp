@@ -66,7 +66,9 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if($data['image'] == ''){
-            $data['image']  = '';
+            $image = new GeoPattern();
+            $image->setString($data['name']);
+            $data['image']  =$image->toDataURI();
         }else{
             $data['image'] = (string) Image::make($data['image'])->encode('data-url');
         }
