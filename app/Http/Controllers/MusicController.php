@@ -14,7 +14,7 @@ class MusicController extends Controller
      */
     public function index()
     {
-        $musics = Music::orderBy('created_at', 'desc')->paginate(10);
+        $musics = Music::all();
         return view('music.index',['musics' => $musics]);
     }
 
