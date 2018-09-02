@@ -20,9 +20,10 @@
                                         <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                     </div>
-                                    <small class="badge badge-info">{{ $artist->genre }}</small>
+                                    <small class="badge badge-info">{{ explode(',',$artist->genre)[0] }}</small><br>
                                     <small class="badge badge-success">{{ $artist->albums->count() }} Albums</small>
-                                    <small class="badge badge-warning">{{ $artist->getAmountOfTime() }}s</small>
+                                    <br>
+                                    <small class="badge badge-warning">{{ $artist->getAmountOfTime() }}s</small><br>
                                 </div>
                             </div>
                         </div>
