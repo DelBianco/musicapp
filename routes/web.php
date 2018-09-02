@@ -19,13 +19,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/artist', 'ArtistsController')->middleware('auth')->except('index');
-Route::resource('/album', 'AlbumController')->middleware('auth')->except('index');
-Route::resource('/music', 'MusicController')->middleware('auth')->except('index');
+Route::resource('/artist', 'ArtistsController')->middleware('auth')->except(['index','show']);
+Route::resource('/album', 'AlbumController')->middleware('auth')->except(['index','show']);
+Route::resource('/music', 'MusicController')->middleware('auth')->except(['index','show']);
 
 Route::get('/artist', 'ArtistsController@index')->name('artist.index');
+Route::get('/artist/{artist}', 'ArtistsController@show')->name('artist.show');
 Route::get('/album', 'AlbumController@index')->name('album.index');
+Route::get('/album/{album}', 'AlbumController@show')->name('album.show');
 Route::get('/music', 'MusicController@index')->name('music.index');
+Route::get('/music/{music}', 'MusicController@show')->name('music.show');
 
 Route::get('/login/spotify', 'SpotifyController@spotifyLogin');
 Route::get('/callback', 'SpotifyController@spotifyCallback');

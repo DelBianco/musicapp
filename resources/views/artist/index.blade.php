@@ -2,7 +2,7 @@
 @section('content')
     <div class="album py-5 bg-light">
         <div class="container">
-            <h2>Artistas</h2>
+            <h2>Artists</h2>
             <div class="row">
                 @foreach ($artists as $artist)
                     <div class="col-md-4">
