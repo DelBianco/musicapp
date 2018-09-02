@@ -56,7 +56,11 @@ class SpotifyController extends Controller
             if($artist == null){
                 $artist = new Artist();
                 $artist->name = $item->name;
-                $artist->genre = $item->genres[0];
+                if(is_array($item->genres)){
+                    $artist->genre = $item->genres[0];
+                }else{
+                    $artist->genre = '';
+                }
                 $artist->description = 'Generos: '.implode(',',$item->genres);
                 $artist->image = $item->images[0]->url;
                 $artist->save();
