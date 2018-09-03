@@ -17,10 +17,10 @@ class CreateAlbumMusicaTable extends Migration
             $table->increments('id');
 
             $table->integer('album_id')->unsigned();
-            $table->foreign('album_id')->references('id')->on('albums');
+            $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');;
 
             $table->integer('music_id')->unsigned();
-            $table->foreign('music_id')->references('id')->on('musics');
+            $table->foreign('music_id')->references('id')->on('musics')->onDelete('cascade');;
             
             $table->timestamps();
         });

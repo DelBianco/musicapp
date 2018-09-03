@@ -24,7 +24,7 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
         - [X] CRUD Musicas
     - [ ] Editar CRUD User (testar)
 - [X] Criar politicas de Acesso 'Rules' (Public, User, Admin)
-- [ ] Layout
+- [X] Layout
     - [X] Criar uma Home-Page
     - [X] Criar páginas em nível Público
         - [X] List Artists
@@ -33,13 +33,12 @@ Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
         - [X] View Artist
         - [X] View Album
         - [X] View Music
-    - [ ] Editar Sass e utilizar o mix
 - [X] Global Search
-    - [ ] Criar páginas em nível User
+    - [X] Criar páginas em nível User
         - [X] Create/Edit Artist
         - [X] Create/Edit Album
         - [X] Create/Edit Songs
-        - [ ] Remove Artist/Album/Songs
+        - [X] Remove Artist/Album/Songs
     - [X] Criar páginas em nível Admin
         - [X] Create/Edit User
         - [X] Remove User

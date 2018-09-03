@@ -15,6 +15,20 @@
                     <li class="list-group-item">Tracks: {{count($album->musics)}}</li>
                     <li class="list-group-item">Total time: {{$album->duration()}}</li>
                 </ul>
+                <hr>
+                @guest
+                    @else
+                        @if (in_array('admin',json_decode(Auth::user()->roles)))
+                            Admin actions: <br>
+                            <a href="{{route('album.edit',['album',$album])}}" class="btn btn-warning">Edit</a>
+                            <form action="/album/{{ $album->id }}" method="post">
+                                {!! csrf_field() !!}
+                                {{ method_field('delete') }}
+                                <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                            </form>
+
+                        @endif
+                        @endguest
             </div>
         </div>
             <br><br>

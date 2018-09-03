@@ -14,6 +14,19 @@
                         <li class="list-group-item">Genres: <span class="badge badge-primary">{!! implode('</span> <span class="badge badge-primary">',explode(',',$artist->genre))  !!} </span></li>
                         <li class="list-group-item">Created at: {{$artist->created_at}}</li>
                     </ul>
+                    <hr>
+                    @guest
+                        @else
+                            @if (in_array('admin',json_decode(Auth::user()->roles)))
+                                Admin actions: <br>
+                                <a href="{{route('artist.edit',['artist',$artist])}}" class="btn btn-warning">Edit</a>
+                                <form action="/artist/{{ $artist->id }}" method="post">
+                                    {!! csrf_field() !!}
+                                    {{ method_field('delete') }}
+                                    <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                                </form>
+                            @endif
+                        @endguest
                 </div>
             </div>
             <br><br>
