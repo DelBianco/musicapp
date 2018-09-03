@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Intervention\Image\Facades\Image;
+use RedeyeVentures\GeoPattern\GeoPattern;
 
 class RegisterController extends Controller
 {
