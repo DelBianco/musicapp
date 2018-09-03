@@ -1,8 +1,45 @@
 # Musicapp
 
-Veja o app rodando em musicapp.tk
+Veja o app rodando em http://musicapp.tk/
 
 Sistema em Laravel de estudo (Meu primeiro sistema em laravel)
+
+
+### Rodando Local
+
+Clone o repositório
+
+Rode
+
+`composer install`
+
+Os Seguintes parametros tem que ser setados no .ENV
+
+Chaves do Spotify podem ser obtidas gratuitamente em: 
+https://developer.spotify.com/dashboard/login
+
+SPOTIFY_KEY
+SPOTIFY_SECRET - 
+
+SPOTIFY_REDIRECT_URI = http://localhost:8000/callback
+
+SCOUT_QUEUE = true
+
+ALGOLIA_APP_ID 
+ALGOLIA_SECRET
+
+Chaves do Algolia tambem podem ser obtidas gratuitamente em: 
+https://www.algolia.com
+
+Roda a instalação do banco e da Seed com o user que esta em  database/seeds/UserTablesSeeder.php
+
+`php artisan migrate:fresh --seed`
+
+`php artisan serve`
+
+as duas API's funcionam via localhost
+
+--
 
 ## Tarefas:
 - [X] Criar Entidades
