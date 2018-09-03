@@ -18,7 +18,8 @@ Os Seguintes parametros tem que ser setados no .ENV
 Chaves do Spotify podem ser obtidas gratuitamente em: 
 https://developer.spotify.com/dashboard/login
 
-SPOTIFY_KEY
+SPOTIFY_KEY -
+
 SPOTIFY_SECRET - 
 
 SPOTIFY_REDIRECT_URI = http://localhost:8000/callback
@@ -26,6 +27,7 @@ SPOTIFY_REDIRECT_URI = http://localhost:8000/callback
 SCOUT_QUEUE = true
 
 ALGOLIA_APP_ID 
+
 ALGOLIA_SECRET
 
 Chaves do Algolia tambem podem ser obtidas gratuitamente em: 
