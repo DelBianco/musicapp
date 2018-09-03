@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('cover_foto') ? ' has-error' : '' }}">
                         <label for="image">Cover Foto</label>
-                        <input id="cover_foto" type="file" class="form-control{{ $errors->has('cover_foto') ? ' is-invalid' : '' }}"  value="{{ old('cover_foto') }}"  name="cover_foto" accept="image/png, image/jpeg">
+                        <input id="cover_foto" type="file" class="form-control-file {{ $errors->has('cover_foto') ? ' is-invalid' : '' }}"  value="{{ old('cover_foto') }}"  name="cover_foto" accept="image/png, image/jpeg">
                         @if ($errors->has('cover_foto'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('cover_foto') }}</strong>

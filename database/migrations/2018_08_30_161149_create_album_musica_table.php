@@ -19,8 +19,8 @@ class CreateAlbumMusicaTable extends Migration
             $table->integer('album_id')->unsigned();
             $table->foreign('album_id')->references('id')->on('albums');
 
-            $table->integer('musica_id')->unsigned();
-            $table->foreign('musica_id')->references('id')->on('musics');
+            $table->integer('music_id')->unsigned();
+            $table->foreign('music_id')->references('id')->on('musics');
             
             $table->timestamps();
         });

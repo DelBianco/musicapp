@@ -67,7 +67,7 @@ class SpotifyController extends Controller
                     $album->cover_foto =  $albumItem->images[0]->url;
                     // Adicionando o relacionamento Album Artist
                     $album->artist_id = $artist->id;
-
+                    $album->save();
                     $tracks = $this->spotifyRequest($httpClient,"https://api.spotify.com/v1/albums/".$albumItem->id."/tracks?limit=10");
                     foreach ($tracks->items as $track) {
                         $music = new Music();
@@ -75,10 +75,12 @@ class SpotifyController extends Controller
                         $music->composer = $artist->name;
                         $music->order_number = $track->track_number;
                         $music->duration = intval($track->duration_ms/1000);
-                        $music->albums()->attach($album->id);
                         $music->save();
+
+                        $music->albums()->sync([$album->id], false);
+                        $album->musics()->sync([$music->id],false);
                     }
-                    $album->save();
+
                 }
             }
 

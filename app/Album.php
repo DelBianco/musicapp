@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Laravel\Scout\Searchable;
 
 class Album extends Model
 {
@@ -19,17 +20,21 @@ class Album extends Model
     /**
      * Retorna as musicas do album.
      */
-    public function musicas(){
-        return $this->belongsToMany('App\Music', 'album_musica','musica_id','musica_id');
+    public function musics(){
+        return $this->belongsToMany('App\Music', 'album_musica');
     }
 
     /**
      * Retorna a duração do album.
      */
     public function getDuration() {
-        return $this->musicas->sum(function($musica) {
-            return $musica->duration;
+        return $this->musics->sum(function($music) {
+            return $music->duration;
         });
+    }
+
+    public function duration(){
+        return  gmdate("H:i:s", $this->getDuration());
     }
 
 }

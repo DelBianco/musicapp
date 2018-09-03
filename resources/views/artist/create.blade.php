@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
                         <label for="image">Image</label>
-                        <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}"  value="{{ old('image') }}"  name="image" accept="image/png, image/jpeg">
+                        <input id="image" type="file" class="form-control-file{{ $errors->has('image') ? ' is-invalid' : '' }}"  value="{{ old('image') }}"  name="image" accept="image/png, image/jpeg">
                         @if ($errors->has('image'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('image') }}</strong>

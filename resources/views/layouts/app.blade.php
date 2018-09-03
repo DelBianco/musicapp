@@ -35,12 +35,16 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-
-                </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <form action="{{ route('search') }}" method="post" class="form-inline my-2 my-lg-0 ml-auto">
+                            {!! csrf_field() !!}
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            <input name="query" id="query" class="form-control ml-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+                    </li>
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">

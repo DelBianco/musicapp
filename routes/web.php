@@ -23,9 +23,9 @@ Route::delete('/user/{user}', 'Auth\RegisterController@delete')->middleware('aut
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/artist', 'ArtistsController')->middleware('auth')->except(['index','show']);
-Route::resource('/album', 'AlbumController')->middleware('auth')->except(['index','show']);
-Route::resource('/music', 'MusicController')->middleware('auth')->except(['index','show']);
+Route::resource('/artist', 'ArtistsController')->middleware('auth')->except(['index', 'show']);
+Route::resource('/album', 'AlbumController')->middleware('auth')->except(['index', 'show']);
+Route::resource('/music', 'MusicController')->middleware('auth')->except(['index', 'show']);
 
 Route::get('/artist', 'ArtistsController@index')->name('artist.index');
 Route::get('/artist/{artist}', 'ArtistsController@show')->name('artist.show');
@@ -39,3 +39,6 @@ Route::get('/callback', 'SpotifyController@spotifyCallback');
 Route::get('/denied', 'SpotifyController@denied');
 Route::get('/login/refresh', 'SpotifyController@spotifyRefresh');
 Route::get('/fetch', 'SpotifyController@retrieveData')->name('fetch');
+
+
+Route::post('/search', 'SearchController@search')->name('search');
