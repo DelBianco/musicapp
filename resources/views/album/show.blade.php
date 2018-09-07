@@ -20,7 +20,7 @@
                     @else
                         @if (in_array('admin',json_decode(Auth::user()->roles)))
                             Admin actions: <br>
-                            <a href="{{route('album.edit',['album',$album])}}" class="btn btn-warning">Edit</a>
+                            <a href="{{route('album.edit',['album' => $album])}}" class="btn btn-warning">Edit</a>
                             <form action="/album/{{ $album->id }}" method="post">
                                 {!! csrf_field() !!}
                                 {{ method_field('delete') }}

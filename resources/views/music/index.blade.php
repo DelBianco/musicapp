@@ -29,6 +29,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {{ $musics->links() }}
         </div>
     </div>
 @endsection

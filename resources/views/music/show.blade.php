@@ -8,7 +8,7 @@
                 @else
                     @if (in_array('admin',json_decode(Auth::user()->roles)))
                         Admin actions: <br>
-                        <a href="{{route('music.edit',['music',$music])}}" class="btn btn-secondary">Edit</a>
+                        <a href="{{route('music.edit',['music' => $music])}}" class="btn btn-secondary">Edit</a>
 
                         <form action="/music/{{ $music->id }}" method="post">
                             {!! csrf_field() !!}

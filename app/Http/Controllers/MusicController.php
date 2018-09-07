@@ -14,7 +14,7 @@ class MusicController extends Controller
      */
     public function index()
     {
-        $musics = Music::all();
+        $musics = Music::paginate(12);
         return view('music.index',['musics' => $musics]);
     }
 

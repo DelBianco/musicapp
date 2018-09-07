@@ -18,6 +18,7 @@
                         </div>
                     @endforeach
                 </div>
+                {{ $artists->links() }}
             </div>
         </div>
     </div>

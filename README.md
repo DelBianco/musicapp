@@ -59,7 +59,6 @@ as duas API's funcionam via localhost
         - [X] CRUD Artistas
         - [X] CRUD Albums
         - [X] CRUD Musicas
-    - [ ] Editar CRUD User (testar)
 - [X] Criar politicas de Acesso 'Rules' (Public, User, Admin)
 - [X] Layout
     - [X] Criar uma Home-Page
@@ -79,3 +78,10 @@ as duas API's funcionam via localhost
     - [X] Criar páginas em nível Admin
         - [X] Create/Edit User
         - [X] Remove User
+- [ ] Paginate
+    - [X] Paginate Models index
+    - [ ] Paginate Search
+- [ ] Layout enhance mix
+    - [ ] Collor change via sass
+    - [ ] Add select search feature js
+    - [ ] Tests 

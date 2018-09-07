@@ -11,28 +11,28 @@
                     {!! csrf_field() !!}
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                         <label for="title">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="{{ old('name') || $artist->name }}">
                         @if($errors->has('name'))
                             <span class="help-block">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
                     <div class="form-group{{ $errors->has('genre') ? ' has-error' : '' }}">
                         <label for="genre">Genre</label>
-                        <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre" value="{{ old('genre') }}">
+                        <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre" value="{{ old('genre') || $artist->genre }}">
                         @if($errors->has('genre'))
                             <span class="help-block">{{ $errors->first('genre') }}</span>
                         @endif
                     </div>
                     <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="{{ old('description') }}">
+                        <input type="text" class="form-control" id="description" name="description" placeholder="Description" value="{{ old('description') || $artist->description }}">
                         @if($errors->has('description'))
                             <span class="help-block">{{ $errors->first('description') }}</span>
                         @endif
                     </div>
                     <div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
                         <label for="image">Image</label>
-                        <input id="image" type="file" class="form-control-file{{ $errors->has('image') ? ' is-invalid' : '' }}"  value="{{ old('image') }}"  name="image" accept="image/png, image/jpeg">
+                        <input id="image" type="file" class="form-control-file{{ $errors->has('image') ? ' is-invalid' : '' }}"  value="{{ old('image') || $artist->image }}"  name="image" accept="image/png, image/jpeg">
                         @if ($errors->has('image'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('image') }}</strong>
