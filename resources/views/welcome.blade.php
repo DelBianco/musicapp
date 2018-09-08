@@ -4,7 +4,7 @@
     <p class="lead text-muted">[Laravel Demo for RunWeb]</p>
 @endsection
 @section('content')
-    <div class="album py-5 bg-light">
+    <div class="album py-5">
         <div class="container">
             <h2>Artistas</h2>
             <div class="row">

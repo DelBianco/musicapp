@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Spotify Sync!</strong> Can we sync our database with your top 10 Artists from Spotify? <a href="{{ route('fetch') }}" class="alert-link">Click Here</a>
+        <strong>Spotify Sync!</strong> Can we syncronize our database with your Spotify's top 10 artists? <a href="{{ route('fetch') }}" class="alert-link">Click Here</a>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -22,7 +22,7 @@
                 <div class="col-sm-10">
                     Use the side menu to create new Artists, Albums or Songs Individually<br>
                     <br>
-                    Use the Spotify section to sync your favorite top 10 spotify Artist to our database<br>
+                    Use the Spotify section to sync your top 10 Spotify's Artist to our database<br>
                     That will include also 10 Albuns and all the Songs inside them
                 </div>
             </div>

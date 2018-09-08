@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="album py-5 bg-light">
+    <div class="album py-5">
         <div class="container">
             <h2>Musics</h2>
             <table class="table table-striped">
@@ -22,9 +22,6 @@
                         <td>{{$music->composer}}</td>
                         <td>{{$music->order_number}}</td>
                         <td>{{$music->duration}}</td>
-                        <td>
-
-                        </td>
                     </tr>
                 @endforeach
                 </tbody>

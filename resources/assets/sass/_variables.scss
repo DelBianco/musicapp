@@ -1,11 +1,14 @@
 
 // Body
-$body-bg: #f8fafc;
+$body-bg: #0e1019;
+$body-color: #e3e3e5;
 
 // Typography
-$font-family-sans-serif: "Nunito", sans-serif;
+$font-family-sans-serif: 'Yanone Kaffeesatz', sans-serif;
+$headings-font-family:  'Bowlby One SC', cursive;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
 
 // Colors
 $blue: #3490dc;
@@ -18,3 +21,13 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+
+$primary:       #0A9CB8;
+$secondary:     #f0f3bd;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         #e3e3e5;
+$dark:          #0e1019;
