@@ -18,7 +18,8 @@ Os Seguintes parametros tem que ser setados no .ENV
 Chaves do Spotify podem ser obtidas gratuitamente em: 
 https://developer.spotify.com/dashboard/login
 
-SPOTIFY_KEY
+SPOTIFY_KEY -
+
 SPOTIFY_SECRET - 
 
 SPOTIFY_REDIRECT_URI = http://localhost:8000/callback
@@ -26,6 +27,7 @@ SPOTIFY_REDIRECT_URI = http://localhost:8000/callback
 SCOUT_QUEUE = true
 
 ALGOLIA_APP_ID 
+
 ALGOLIA_SECRET
 
 Chaves do Algolia tambem podem ser obtidas gratuitamente em: 
@@ -59,6 +61,7 @@ as duas API's funcionam via localhost
         - [X] CRUD Artistas
         - [X] CRUD Albums
         - [X] CRUD Musicas
+    - [ ] Editar CRUD User (testar)
 - [X] Criar politicas de Acesso 'Rules' (Public, User, Admin)
 - [X] Layout
     - [X] Criar uma Home-Page
@@ -78,10 +81,3 @@ as duas API's funcionam via localhost
     - [X] Criar páginas em nível Admin
         - [X] Create/Edit User
         - [X] Remove User
-- [ ] Paginate
-    - [X] Paginate Models index
-    - [ ] Paginate Search
-- [ ] Layout enhance mix
-    - [ ] Collor change via sass
-    - [ ] Add select search feature js
-    - [ ] Tests 
