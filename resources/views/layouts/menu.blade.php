@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">MusicApp</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 brand-font" href="{{ '/' }}">MusicApp</a>
     <form action="{{ route('search') }}" method="post" class="form-inline w-100">
         {!! csrf_field() !!}
         {{--<input  class="form-control mx-sm-2" type="search" placeholder="Search" aria-label="Search">--}}
