@@ -10,10 +10,10 @@
             </div>
             <div class="col-sm-6">
                 <ul class="list-group">
-                    <li class="list-group-item">Artist: {{count($album->artist->name)}}</li>
-                    <li class="list-group-item">Year: {{count($album->year)}}</li>
-                    <li class="list-group-item">Tracks: {{count($album->musics)}}</li>
-                    <li class="list-group-item">Total time: {{$album->duration()}}</li>
+                    <li class="list-group-item list-group-item-dark">Artist: {{$album->artist->name}}</li>
+                    <li class="list-group-item list-group-item-dark">Year: {{$album->year}}</li>
+                    <li class="list-group-item list-group-item-dark">Tracks: {{count($album->musics)}}</li>
+                    <li class="list-group-item list-group-item-dark">Total time: {{$album->duration()}}</li>
                 </ul>
                 <hr>
                 @guest

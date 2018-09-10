@@ -9,10 +9,10 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="list-group">
-                        <li class="list-group-item">Artist: {{$artist->name}}</li>
-                        <li class="list-group-item">Description: {{$artist->description}}</li>
-                        <li class="list-group-item">Genres: <span class="badge badge-primary">{!! implode('</span> <span class="badge badge-primary">',explode(',',$artist->genre))  !!} </span></li>
-                        <li class="list-group-item">Created at: {{$artist->created_at}}</li>
+                        <li class="list-group-item list-group-item-dark">Artist: {{$artist->name}}</li>
+                        <li class="list-group-item list-group-item-dark">Description: {{$artist->description}}</li>
+                        <li class="list-group-item list-group-item-dark">Genres: <span class="badge badge-primary">{!! implode('</span> <span class="badge badge-primary">',explode(',',$artist->genre))  !!} </span></li>
+                        <li class="list-group-item list-group-item-dark">Created at: {{$artist->created_at}}</li>
                     </ul>
                     <hr>
                     @guest

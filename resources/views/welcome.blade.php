@@ -1,8 +1,4 @@
 @extends('layouts.app')
-@section('sidemenu-top')
-    <h1 class="jumbotron-heading">MusicApp</h1>
-    <p class="lead text-muted">[Laravel Demo for RunWeb]</p>
-@endsection
 @section('content')
     <div class="album py-5">
         <div class="container">

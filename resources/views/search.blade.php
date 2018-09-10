@@ -1,10 +1,5 @@
 @extends('layouts.app')
-@section('sidemenu-top')
-    <h1 class="jumbotron-heading">MusicApp</h1>
-    <p class="lead text-muted">[Laravel Demo for RunWeb]</p>
-@endsection
 @section('content')
-    <div class="alert alert-warning">[ * Showing only 5 results by Type (Album, Artist or Music) ]</div>
     <ul class="list-unstyled">
     @forelse($search['albums'] as $album)
         <li class="media">
@@ -19,6 +14,7 @@
             :( Sorry, No Album found!
         </li>
     @endforelse
+
         <hr>
     @forelse($search['artists'] as $artist)
         <li class="media">
@@ -48,4 +44,5 @@
             :( Sorry, No Music found!
         </li>
     @endforelse
+    </ul>
 @endsection

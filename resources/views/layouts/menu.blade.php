@@ -1,44 +1,25 @@
-<div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-                <h4 class="text-white">Search</h4>
-                <p class="text-muted">
-                <form action="{{ route('search') }}" method="post" class="form-inline my-2 my-lg-0 ml-auto">
-                    {!! csrf_field() !!}
-                    <input name="query" id="query" class="form-control mx-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">MusicApp</a>
+    <form action="{{ route('search') }}" method="post" class="form-inline w-100">
+        {!! csrf_field() !!}
+        {{--<input  class="form-control mx-sm-2" type="search" placeholder="Search" aria-label="Search">--}}
+        <input name="query" id="query" class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>--}}
+    </form>
+
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+        @guest
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            @else
+                <a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                      style="display: none;">
+                    @csrf
                 </form>
-                </p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-                <h4 class="text-white">Menu</h4>
-                <ul class="list-unstyled">
-                    @guest
-                    <li><a class="text-white" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                    @else
-                    <li><a class="text-white" href="{{ route('home') }}">{{ __('Dashboard') }}</a></li>
-                    <li><a class="text-white" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                  style="display: none;">
-                                @csrf
-                            </form>
-                        </a>
-                    </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-        <a href="{{ url('/') }}" class="navbar-brand d-flex align-items-center">
-            <h1>MusicApp</h1>
-        </a>
-        <button class="navbar-toggler border-0 ml-auto mr-2" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+            </a>
+        @endguest
+        </li>
+    </ul>
+</nav>
